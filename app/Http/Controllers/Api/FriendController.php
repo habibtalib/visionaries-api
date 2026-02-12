@@ -28,6 +28,8 @@ class FriendController extends Controller
     {
         $data = $request->validate(['friend_id' => 'required|exists:users,id']);
         Friend::create(['user_id' => $request->user()->id, 'friend_id' => $data['friend_id'], 'status' => 'pending']);
+        event(new FriendRequestReceived($request->user(), $data['friend_id']));
+        \App\Models\User::find($data['friend_id'])?->notify(new FriendRequestNotification($request->user()));
         return response()->json(['message' => 'Request sent']);
     }
 

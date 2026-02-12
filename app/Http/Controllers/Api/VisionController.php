@@ -57,6 +57,7 @@ class VisionController extends Controller
             'reference_id' => $vision->id,
         ]);
 
+        event(new VisionUpdated($user, $vision->fresh()));
         return response()->json($vision->fresh());
     }
 

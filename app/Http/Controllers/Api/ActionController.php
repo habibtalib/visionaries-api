@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Action;
+use App\Events\ActionCompleted;
 use App\Models\ActionCheckIn;
 use App\Models\TimelineEvent;
 use Illuminate\Http\Request;
@@ -104,6 +105,7 @@ class ActionController extends Controller
             ]);
         }
 
+        event(new ActionCompleted($request->user(), $action, $data["status"]));
         return response()->json($checkIn);
     }
 

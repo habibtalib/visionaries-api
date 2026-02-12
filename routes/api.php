@@ -15,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 Route::post('/auth/register', [AuthController::class, 'register']);
 Route::post('/auth/login', [AuthController::class, 'login']);
 
+// Google OAuth routes (public)
+Route::get('/auth/google/redirect', [AuthController::class, 'googleRedirect']);
+Route::get('/auth/google/callback', [AuthController::class, 'googleCallback']);
+Route::post('/auth/google/token', [AuthController::class, 'googleToken']);
+
 // Protected routes
 Route::middleware('auth:sanctum')->group(function () {
     // Auth
