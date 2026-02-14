@@ -9,18 +9,85 @@ class IslamicEventSeeder extends Seeder
     public function run(): void
     {
         $events = [
-            ['name_en' => 'Ramadan Begins', 'name_ar' => 'بداية رمضان', 'name_ms' => 'Permulaan Ramadan', 'type' => 'fasting', 'description_en' => 'The beginning of the holy month of fasting', 'description_ms' => 'Permulaan bulan suci puasa', 'hijri_month' => 9, 'hijri_day' => 1, 'gregorian_date_2026' => '2026-02-18', 'color' => '#10B981'],
-            ['name_en' => 'Laylat al-Qadr', 'name_ar' => 'ليلة القدر', 'name_ms' => 'Malam Lailatulqadar', 'type' => 'holy_night', 'description_en' => 'The Night of Power, better than a thousand months', 'description_ms' => 'Malam yang lebih baik daripada seribu bulan', 'hijri_month' => 9, 'hijri_day' => 27, 'gregorian_date_2026' => '2026-03-16', 'color' => '#8B5CF6'],
-            ['name_en' => 'Eid al-Fitr', 'name_ar' => 'عيد الفطر', 'name_ms' => 'Hari Raya Aidilfitri', 'type' => 'eid', 'description_en' => 'Festival of Breaking the Fast', 'description_ms' => 'Hari Raya Aidilfitri', 'hijri_month' => 10, 'hijri_day' => 1, 'gregorian_date_2026' => '2026-03-20', 'color' => '#F59E0B'],
-            ['name_en' => 'Day of Arafah', 'name_ar' => 'يوم عرفة', 'name_ms' => 'Hari Arafah', 'type' => 'remembrance', 'description_en' => 'The most important day of Hajj', 'description_ms' => 'Hari paling penting dalam ibadah Haji', 'hijri_month' => 12, 'hijri_day' => 9, 'gregorian_date_2026' => '2026-05-26', 'color' => '#3B82F6'],
-            ['name_en' => 'Eid al-Adha', 'name_ar' => 'عيد الأضحى', 'name_ms' => 'Hari Raya Aidiladha', 'type' => 'eid', 'description_en' => 'Festival of Sacrifice', 'description_ms' => 'Hari Raya Korban', 'hijri_month' => 12, 'hijri_day' => 10, 'gregorian_date_2026' => '2026-05-27', 'color' => '#EF4444'],
-            ['name_en' => 'Islamic New Year', 'name_ar' => 'رأس السنة الهجرية', 'name_ms' => 'Awal Muharram', 'type' => 'remembrance', 'description_en' => 'Beginning of the new Hijri year', 'description_ms' => 'Permulaan tahun baru Hijrah', 'hijri_month' => 1, 'hijri_day' => 1, 'gregorian_date_2026' => '2026-06-17', 'color' => '#6366F1'],
-            ['name_en' => 'Ashura', 'name_ar' => 'عاشوراء', 'name_ms' => 'Hari Asyura', 'type' => 'fasting', 'description_en' => 'Day of fasting on 10th Muharram', 'description_ms' => 'Hari puasa sunat 10 Muharram', 'hijri_month' => 1, 'hijri_day' => 10, 'gregorian_date_2026' => '2026-06-26', 'color' => '#14B8A6'],
-            ['name_en' => 'Mawlid al-Nabi', 'name_ar' => 'المولد النبوي', 'name_ms' => 'Maulidur Rasul', 'type' => 'remembrance', 'description_en' => 'Birthday of Prophet Muhammad ﷺ', 'description_ms' => 'Hari kelahiran Nabi Muhammad ﷺ', 'hijri_month' => 3, 'hijri_day' => 12, 'gregorian_date_2026' => '2026-08-27', 'color' => '#EC4899'],
+            [
+                'title' => 'Ramadan Begins',
+                'title_ms' => 'Permulaan Ramadan', 
+                'description' => 'The blessed month of fasting begins. A time for spiritual reflection, increased devotion, and self-discipline through abstaining from food and drink from dawn to sunset.',
+                'event_date' => '2026-02-18',
+                'hijri_date' => '1 Ramadan 1448',
+                'type' => 'fasting',
+                'is_recurring' => true
+            ],
+            [
+                'title' => 'Laylat al-Qadr',
+                'title_ms' => 'Malam Lailatulqadar', 
+                'description' => 'The Night of Power — better than a thousand months. Seek it in the odd nights of the last ten days of Ramadan. Angels descend and peace prevails until dawn.',
+                'event_date' => '2026-03-15',
+                'hijri_date' => '27 Ramadan 1448',
+                'type' => 'holy',
+                'is_recurring' => true
+            ],
+            [
+                'title' => 'Eid al-Fitr',
+                'title_ms' => 'Hari Raya Aidilfitri', 
+                'description' => 'Festival of Breaking the Fast. A day of joy, gratitude, and celebration after completing Ramadan. Muslims gather for prayer, give charity, and feast together.',
+                'event_date' => '2026-03-20',
+                'hijri_date' => '1 Shawwal 1448',
+                'type' => 'eid',
+                'is_recurring' => true
+            ],
+            [
+                'title' => 'Isra & Mi\'raj',
+                'title_ms' => 'Israk Mikraj', 
+                'description' => 'The Night Journey and Ascension. Prophet Muhammad ﷺ traveled from Mecca to Jerusalem and ascended through the heavens, where the five daily prayers were prescribed.',
+                'event_date' => '2026-01-16',
+                'hijri_date' => '27 Rajab 1447',
+                'type' => 'holy',
+                'is_recurring' => true
+            ],
+            [
+                'title' => 'Day of Arafah',
+                'title_ms' => 'Hari Arafah', 
+                'description' => 'The most blessed day of the year. Standing on Arafah is the pillar of Hajj. Fasting on this day expiates sins of the previous and coming year.',
+                'event_date' => '2026-05-26',
+                'hijri_date' => '9 Dhul Hijjah 1447',
+                'type' => 'fasting',
+                'is_recurring' => true
+            ],
+            [
+                'title' => 'Eid al-Adha',
+                'title_ms' => 'Hari Raya Aidiladha', 
+                'description' => 'Festival of Sacrifice. Commemorates Prophet Ibrahim\'s willingness to sacrifice his son in obedience to Allah. Muslims perform the Qurbani and share meat with those in need.',
+                'event_date' => '2026-05-27',
+                'hijri_date' => '10 Dhul Hijjah 1447',
+                'type' => 'eid',
+                'is_recurring' => true
+            ],
+            [
+                'title' => 'Ashura',
+                'title_ms' => 'Hari Asyura', 
+                'description' => 'The 10th of Muharram. A day of great historical significance. Fasting on this day, along with the 9th or 11th, expiates sins of the previous year.',
+                'event_date' => '2026-07-25',
+                'hijri_date' => '10 Muharram 1448',
+                'type' => 'remembrance',
+                'is_recurring' => true
+            ],
+            [
+                'title' => 'Mawlid al-Nabi',
+                'title_ms' => 'Maulidur Rasul', 
+                'description' => 'Birth of Prophet Muhammad ﷺ. A day to remember his life, teachings, and noble character — the mercy sent to all of mankind.',
+                'event_date' => '2026-09-24',
+                'hijri_date' => '12 Rabi al-Awwal 1448',
+                'type' => 'remembrance',
+                'is_recurring' => true
+            ],
         ];
 
         foreach ($events as $event) {
-            IslamicEvent::create($event);
+            IslamicEvent::firstOrCreate(
+                ['title' => $event['title']],
+                $event
+            );
         }
     }
 }
