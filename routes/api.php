@@ -11,6 +11,7 @@ use App\Http\Controllers\Api\TimelineController;
 use App\Http\Controllers\Api\DashboardController;
 use App\Http\Controllers\Api\CommunityController;
 use App\Http\Controllers\Api\CalendarController;
+use App\Http\Controllers\Api\LanguageController;
 use Illuminate\Support\Facades\Route;
 
 // Public auth routes
@@ -28,6 +29,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/auth/logout', [AuthController::class, 'logout']);
     Route::get('/auth/user', [AuthController::class, 'user']);
     Route::put('/auth/user', [AuthController::class, 'updateProfile']);
+
+    // Language
+    Route::get('/language', [LanguageController::class, 'index']);
+    Route::get('/language/current', [LanguageController::class, 'current']);
+    Route::post('/language/switch', [LanguageController::class, 'switch']);
 
     // Dashboard
     Route::get('/dashboard/today', [DashboardController::class, 'today']);
