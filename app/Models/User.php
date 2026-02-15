@@ -36,4 +36,5 @@ class User extends Authenticatable
     public function checkIns() { return $this->hasMany(CheckIn::class); }
     public function quizAttempts() { return $this->hasMany(QuizAttempt::class); }
     public function timelineEvents() { return $this->hasMany(TimelineEvent::class); }
+    public function pushSubscriptions() { return $this->hasMany(PushSubscription::class); }
 }

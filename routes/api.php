@@ -13,11 +13,13 @@ use App\Http\Controllers\Api\CommunityController;
 use App\Http\Controllers\Api\CalendarController;
 use App\Http\Controllers\Api\LanguageController;
 use App\Http\Controllers\Api\SuggestionController;
+use App\Http\Controllers\Api\PushController;
 use Illuminate\Support\Facades\Route;
 
 // Public auth routes
 Route::post('/auth/register', [AuthController::class, 'register']);
 Route::post('/auth/login', [AuthController::class, 'login']);
+Route::get("/push/vapid-key", [PushController::class, "vapidKey"]);
 
 // Google OAuth routes (public)
 Route::get('/auth/google/redirect', [AuthController::class, 'googleRedirect']);
@@ -101,4 +103,9 @@ Route::middleware('auth:sanctum')->group(function () {
     // Suggestions
     Route::get("/suggestions", [SuggestionController::class, "index"]);
     Route::post("/suggestions/{id}/add", [SuggestionController::class, "add"]);
+
+    // Push Notifications
+    Route::post("/push/subscribe", [PushController::class, "subscribe"]);
+    Route::delete("/push/unsubscribe", [PushController::class, "unsubscribe"]);
+    Route::post("/push/test", [PushController::class, "test"]);
 });
