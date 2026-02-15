@@ -10,6 +10,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             TraitSeeder::class,
             AdminUserSeeder::class,
+            TestUserSeeder::class,
         ]);
     }
 }

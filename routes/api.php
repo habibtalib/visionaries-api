@@ -12,6 +12,7 @@ use App\Http\Controllers\Api\DashboardController;
 use App\Http\Controllers\Api\CommunityController;
 use App\Http\Controllers\Api\CalendarController;
 use App\Http\Controllers\Api\LanguageController;
+use App\Http\Controllers\Api\SuggestionController;
 use Illuminate\Support\Facades\Route;
 
 // Public auth routes
@@ -94,6 +95,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/check-ins/{id}', [CheckInController::class, 'show']);
     Route::delete('/check-ins/{id}', [CheckInController::class, 'destroy']);
 
-    // Timeline
+        // Timeline
     Route::get('/timeline', [TimelineController::class, 'index']);
+
+    // Suggestions
+    Route::get("/suggestions", [SuggestionController::class, "index"]);
+    Route::post("/suggestions/{id}/add", [SuggestionController::class, "add"]);
 });
