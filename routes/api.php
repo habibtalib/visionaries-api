@@ -109,3 +109,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::delete("/push/unsubscribe", [PushController::class, "unsubscribe"]);
     Route::post("/push/test", [PushController::class, "test"]);
 });
+// Admin routes
+Route::middleware(["auth:sanctum", "admin"])->prefix("admin")->group(function () {
+    Route::post("/push/broadcast", [\App\Http\Controllers\Api\AdminPushController::class, "broadcast"]);
+    Route::get("/push/broadcasts", [\App\Http\Controllers\Api\AdminPushController::class, "broadcasts"]);
+    Route::get("/push/stats", [\App\Http\Controllers\Api\AdminPushController::class, "stats"]);
+});

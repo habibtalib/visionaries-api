@@ -14,7 +14,7 @@ class User extends Authenticatable
 
     protected $fillable = [
         'email', 'password', 'display_name', 'avatar_url', 'language', 'google_id',
-        'onboarding_completed', 'niyyah', 'auth_provider', 'email_verified',
+        'onboarding_completed', 'niyyah', 'auth_provider', 'email_verified', 'is_admin',
     ];
     protected $hidden = ['password', 'remember_token'];
     protected function casts(): array
