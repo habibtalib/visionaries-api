@@ -107,54 +107,54 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FND-01 | TBD | Pending |
-| FND-02 | TBD | Pending |
-| FND-03 | TBD | Pending |
-| FND-04 | TBD | Pending |
-| FND-05 | TBD | Pending |
-| FND-06 | TBD | Pending |
-| FRD-01 | TBD | Pending |
-| FRD-02 | TBD | Pending |
-| FRD-03 | TBD | Pending |
-| FRD-04 | TBD | Pending |
-| FRD-05 | TBD | Pending |
-| FRD-06 | TBD | Pending |
-| FRD-07 | TBD | Pending |
-| FRD-08 | TBD | Pending |
-| FRD-09 | TBD | Pending |
-| QIZ-01 | TBD | Pending |
-| QIZ-02 | TBD | Pending |
-| QIZ-03 | TBD | Pending |
-| QIZ-04 | TBD | Pending |
-| REL-01 | TBD | Pending |
-| REL-02 | TBD | Pending |
-| REL-03 | TBD | Pending |
-| ACT-01 | TBD | Pending |
-| JNL-01 | TBD | Pending |
-| SET-01 | TBD | Pending |
-| SET-02 | TBD | Pending |
-| AIS-01 | TBD | Pending |
-| AIS-02 | TBD | Pending |
-| AIS-03 | TBD | Pending |
-| AIS-04 | TBD | Pending |
-| AIS-05 | TBD | Pending |
-| RES-01 | TBD | Pending |
-| RES-02 | TBD | Pending |
-| RES-03 | TBD | Pending |
-| VAL-01 | TBD | Pending |
-| VAL-02 | TBD | Pending |
-| TST-01 | TBD | Pending |
-| TST-02 | TBD | Pending |
-| TST-03 | TBD | Pending |
-| TST-04 | TBD | Pending |
-| TST-05 | TBD | Pending |
-| TST-06 | TBD | Pending |
+| FND-01 | Phase 1 | Pending |
+| FND-02 | Phase 1 | Pending |
+| FND-03 | Phase 1 | Pending |
+| FND-04 | Phase 1 | Pending |
+| FND-05 | Phase 1 | Pending |
+| FND-06 | Phase 1 | Pending |
+| FRD-01 | Phase 2 | Pending |
+| FRD-02 | Phase 2 | Pending |
+| FRD-03 | Phase 2 | Pending |
+| FRD-04 | Phase 2 | Pending |
+| FRD-05 | Phase 2 | Pending |
+| FRD-06 | Phase 2 | Pending |
+| FRD-07 | Phase 2 | Pending |
+| FRD-08 | Phase 2 | Pending |
+| FRD-09 | Phase 2 | Pending |
+| QIZ-01 | Phase 3 | Pending |
+| QIZ-02 | Phase 3 | Pending |
+| QIZ-03 | Phase 3 | Pending |
+| QIZ-04 | Phase 3 | Pending |
+| REL-01 | Phase 3 | Pending |
+| REL-02 | Phase 3 | Pending |
+| REL-03 | Phase 3 | Pending |
+| ACT-01 | Phase 4 | Pending |
+| JNL-01 | Phase 4 | Pending |
+| SET-01 | Phase 4 | Pending |
+| SET-02 | Phase 4 | Pending |
+| AIS-01 | Phase 5 | Pending |
+| AIS-02 | Phase 5 | Pending |
+| AIS-03 | Phase 5 | Pending |
+| AIS-04 | Phase 5 | Pending |
+| AIS-05 | Phase 5 | Pending |
+| RES-01 | Phase 6 | Pending |
+| RES-02 | Phase 6 | Pending |
+| RES-03 | Phase 6 | Pending |
+| VAL-01 | Phase 7 | Pending |
+| VAL-02 | Phase 7 | Pending |
+| TST-01 | Phase 8 | Pending |
+| TST-02 | Phase 8 | Pending |
+| TST-03 | Phase 8 | Pending |
+| TST-04 | Phase 8 | Pending |
+| TST-05 | Phase 8 | Pending |
+| TST-06 | Phase 8 | Pending |
 
 **Coverage:**
 - v1.2 requirements: 42 total
-- Mapped to phases: 0
-- Unmapped: 42
+- Mapped to phases: 42
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-27*
-*Last updated: 2026-03-27 after initial definition*
+*Last updated: 2026-03-27 after roadmap phase mapping*
