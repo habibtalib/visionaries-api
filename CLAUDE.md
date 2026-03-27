@@ -24,6 +24,7 @@ Visionaries API is a Laravel 12 backend for an Islamic personal development mobi
 - Laravel Sanctum token-based auth. Stateful API enabled in middleware.
 - Google SSO via Laravel Socialite (routes at `/api/auth/google/*`).
 - All protected routes use `auth:sanctum` middleware.
+- Admin routes additionally use `AdminMiddleware` which checks `is_admin` flag or `email == 'admin@visionaries.pro'`.
 
 ### UUID Primary Keys
 All models use `App\Traits\HasUuid` — a trait that auto-generates UUID primary keys on creation and sets `incrementing=false`, `keyType='string'`. Always use string IDs, never integer auto-increment.
@@ -36,6 +37,12 @@ The app is organized around three conceptual pillars:
 
 Supporting models: `JournalEntry`, `Review`, `CheckIn` (spiritual check-ins), `QuizAttempt`, `TimelineEvent`, `CommunityPost`, `CommunityComment`, `CommunityLike`, `Reel`, `Quiz`, `IslamicEvent`.
 
+### Route Organization
+Routes in `routes/api.php` are grouped by domain:
+- **Public:** Auth registration/login, VAPID key, Google OAuth
+- **Protected** (`auth:sanctum`): Feature endpoints matching the SEE/BE/DO framework
+- **Admin** (`auth:sanctum` + `admin`): Push broadcast administration at `/admin/push/*`
+
 ### i18n / Localization
 - Supported locales: `en` (English), `ms` (Malay)
 - `SetLocale` middleware resolves locale from: authenticated user preference → `?locale=` param → `Accept-Language` header → default `en`
@@ -44,6 +51,19 @@ Supporting models: `JournalEntry`, `Review`, `CheckIn` (spiritual check-ins), `Q
 
 ### API Resources (Response Serialization)
 All API responses use Laravel API Resources in `app/Http/Resources/` to transform models into JSON. When adding new endpoints, create a corresponding resource class.
+
+### Push Notifications
+Two push notification backends:
+- **Web Push (VAPID):** `PushNotificationService` using `minishlink/web-push`. Stores `PushSubscription` model per user. Auto-removes expired subscriptions on failed sends.
+- **OneSignal:** `OneSignalService` for broadcast push. Optional — gracefully handles unconfigured state.
+
+Scheduled push commands (all in `Asia/Kuala_Lumpur` timezone, defined in `routes/console.php`):
+- `push:daily-morning` — daily at 08:00
+- `push:evening-checkin` — daily at 21:00
+- `push:weekly-review` — Fridays at 09:00
+
+### Notifications
+Notifications in `app/Notifications/` use `['database', 'broadcast']` channels. Examples: `ActionReminderNotification`, `FriendRequestNotification`, `WeeklyReviewReminder`.
 
 ### Real-time Broadcasting
 Laravel Reverb (WebSocket server) with three broadcast channels:
